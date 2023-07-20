@@ -1,0 +1,71 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+
+#nav-icon1 {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  padding: 5px;
+  @include rotate(0 deg);
+  @include transition($time: 0.5s);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#nav-icon1 span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 3.5rem;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  @include rotate(0deg);
+  @include transition($time: 0.25s);
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 18px;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 36px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  @include rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  @include rotate(-135deg);
+}
+#nav-bar{
+    display: none;
+}
+#nav-bar.active{
+        right:20px;
+        transition: $easeTime $ease;
+        display: block;
+    }
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a{
+    @include a;
+}

@@ -1,0 +1,89 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "hamburger" as *;
+header {
+  border-bottom: $border;
+  margin: 0 2rem 2rem 2rem;
+  h1 {
+    font-size: $fontSize;
+  }
+  a{
+    @include a;
+  }
+  li{
+    list-style: none;
+  }
+  p {
+    font-size: 1rem;
+    justify-content: end;
+  }
+  #siteLogo {
+    width: 3rem;
+    margin: 0;
+  }
+  #nav-bar {
+    ul {
+      font-size: 1rem;
+    }
+    .active {
+      right: 20px;
+      transition: $easeTime $ease;
+      display: block;
+    }
+  }
+  nav {
+    height: 100%;
+    background: white;
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    transition: $easeTime $ease;
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    a {
+      display: block;
+      padding: $margin;
+      color: black;
+      font-size: $fontSize;
+      text-align: center;
+      text-decoration: none;
+    }
+  } //The end of nav
+} //The end of header
+
+  @media (min-width: 950px) {
+    header {
+      border-bottom: 2px solid black;
+      margin: 0 2rem 2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        font-size: 3rem;
+        margin: $margin;
+      }
+      ul {
+        list-style: none;
+      }
+      p {
+        font-size: $fontSize;
+        margin-top: 2.5rem;
+      }
+      #siteLogo {
+        width: 5rem;
+        height: 5rem;
+        margin-top: 1.5rem;
+      }
+      #nav-icon1 {
+        margin-top: 2.5rem;
+      }
+      }
+    } //The end of header (@media)
+  
