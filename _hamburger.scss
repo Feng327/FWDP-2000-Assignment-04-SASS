@@ -1,6 +1,6 @@
 @use "variables" as *;
 @use "mixin" as *;
-
+@use "placeholder" as *;
 
 #nav-icon1 {
   width: 60px;
@@ -67,5 +67,5 @@ nav ul{
     list-style: none;
 }
 a{
-    @include a;
+  @extend %a;
 }

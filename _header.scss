@@ -8,7 +8,7 @@ header {
     font-size: $fontSize;
   }
   a{
-    @include a;
+    @extend %a;
   }
   li{
     list-style: none;

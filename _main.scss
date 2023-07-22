@@ -1,5 +1,6 @@
 @use "variables" as *;
 @use "mixin" as *;
+@use "placeholder" as *;
 
 main {
   h2 {
@@ -32,6 +33,7 @@ main {
     margin: 1rem;
   }
   article {
+    justify-content: center;
     padding: 0.5rem;
     margin: 1.5rem;
     border-radius: 1.5rem;
@@ -45,11 +47,10 @@ main {
     backdrop-filter: blur(20px);
   }
   .loadMore{
-    margin-left:40px;
-    @include loadMore;
+    @extend %loadMore;
   }
   a {
-    @include a;
+    @extend %a;
   }
   li{
     list-style: none;
@@ -67,7 +68,7 @@ main {
         max-width: 50rem;
       }
       a {
-        @include a;
+        @extend %a;
       }
     } //The end of .feature
 
@@ -164,26 +165,26 @@ main {
       grid-column: 2/3;
       grid: 3/4;
       margin: 0 auto;
-      @include loadMore;
+      @extend %loadMore;
     }
     .nav {
       @include grid(4, 1);
       border-top: $border;
     }
     .myAccount {
-      @include a;
+      @extend %a;
       grid-column: 1/2;
     }
     .contact {
-      @include a;
+      @extend %a;
       grid-column: 2/3;
     }
     .connet {
-      @include a;
+      @extend %a;
       grid-column: 3/4;
     }
     .about {
-      @include a;
+      @extend %a;
       grid-column: 4/5;
     }
   }
